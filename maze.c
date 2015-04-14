@@ -1,27 +1,40 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <string.h>
 #include "graphics.h"
 #include "maze.h"
 
 
+ 
 int px = S;
 int py = S;
 int key;
-int quit = 0;
 int count = 0;
-
-int maze[ROW][COL] =
-{ {B, B, B, B, B, B, B, B, B},
-    {B, _, P, J, B, L, P, _, B},
-    {B, P, B, B, B, B, B, P, B},
-    {B, _, P, _, P, _, B, _, B},
-    {B, P, B, P, B, P, B, P, B},
-    {B, _, B, _, P, _, B, _, B},
-    {B, P, B, P, B, P, B, P, B},
-    {B, _, P, _, P, B, B, E, B},
-    {B, B, B, B, B, B, B, B, B}};
+int quit = 0;
+int B, S, T, P, E, I, F, J, L;
 
 
+
+
+
+int maze[ROW][COL] = {};
+
+
+
+
+
+
+
+
+
+int search(struct var *vars, const char *name){
+    int i;
+    for(i=0; vars[i].name ; ++i){
+        if(strcmp(vars[i].name, name)==0)
+            return i;
+    }
+    return -1;//not found
+}
 
 bool move_player(int y, int x){ // Moves the Player
     py = y;
@@ -156,12 +169,29 @@ bool process_input(){
     return true;
     
 }
-bool run_game(){
+
+int exit_game(){
+    return quit = 1;
     
+}
+bool run_game(){
+
+   if(!quit){    
     render_board();
     process_input();
-    render_board();
+    render_board();     
+       return true;
+   }
+    else 
+   
+
+    return false; 
     
-    return true;
-    
+ 
+}
+
+
+void end(){
+     fclose(fp); 
+     printf("Pellets eaten: %i\n", count);
 }

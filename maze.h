@@ -25,7 +25,7 @@
 #define ENDF color(0,0,0)
 #define B 0
 #define S 1
-#define _ 2
+#define T 2
 #define P 3
 #define E 4
 #define I 5
@@ -39,13 +39,24 @@
 
 
 
+typedef struct VAR {
+    char *name;
+    void *pointer;
+}var;
 
 
+
+
+
+
+int search(struct var *vars, const char *name);
 bool move_player(int x, int y);
 void interact();
 void render_board();
 bool process_input();
 bool run_game();
+void end();
+bool close();
 
 
 

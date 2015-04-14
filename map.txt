@@ -1,0 +1,32 @@
+The maze is simple to edit. You have Borders (walls), tiles with Pellets, Empty tiles(t), and the portals J&L, for left to right jump and vice versa, respectively. You can also change the size by adjusting the row and column size. Things to consider are the Starting piece and the End piece which can also be adjusted by altering the positions. Also the colors can be changed.
+
+
+ 
+ 
+
+ROW = 5;
+COLUNM = 5;
+
+positionx = 1;
+positiony = 1;
+
+maze[ROW][COL] =
+   {{B, B, B, B, B, B, B, B, B},
+    {B, T, P, J, B, L, P, T, B},
+    {B, P, B, B, B, B, B, P, B},
+    {B, T, P, T, P, T, B, T, B},
+    {B, P, B, P, B, P, B, P, B},
+    {B, T, B, T, P, T, B, T, B},
+    {B, P, B, P, B, P, B, P, B},
+    {B, T, P, T, P, B, B, E, B},
+    {B, B, B, B, B, B, B, B, B}};
+
+
+
+
+
+
+
+
+ 
+   
